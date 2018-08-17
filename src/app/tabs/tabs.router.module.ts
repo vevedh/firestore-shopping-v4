@@ -13,24 +13,24 @@ const routes: Routes = [
       {
         path: 'shopping-list',
         outlet: 'shopping-list',
-        component: ShoppingListPage
+        component: ShoppingListPage,
       },
       {
         path: 'inventory',
         outlet: 'inventory',
-        component: InventoryPage
+        component: InventoryPage,
       },
-    ]
+    ],
   },
   {
     path: '',
-    redirectTo: '/tabs/(home:home)',
-    pathMatch: 'full'
-  }
+    redirectTo: '/tabs/(inventory:inventory)',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class TabsPageRoutingModule {}
