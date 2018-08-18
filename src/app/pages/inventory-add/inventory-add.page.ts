@@ -53,7 +53,7 @@ export class InventoryAddPage implements OnInit {
         this.inShoppingList
       );
       await loading.dismiss();
-      this.router.navigate(['/tabs/(inventory:inventory)']);
+      this.router.navigateByUrl('/tabs/(inventory:inventory)');
     } catch (error) {
       await loading.dismiss();
       const alert = await this.alertCtrl.create({

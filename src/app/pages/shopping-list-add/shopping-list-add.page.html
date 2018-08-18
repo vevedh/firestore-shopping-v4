@@ -1,9 +1,24 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/(shopping-list:shopping-list)"></ion-back-button>
+    </ion-buttons>
     <ion-title>shopping-list-add</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
+  <h3>Add groceries to your shopping list</h3>
 
+  <ion-list>
+    <ion-item *ngFor="let grocery of groceryList | async">
+      <ion-label>
+        {{ grocery.name }}
+      </ion-label>
+      <ion-button slot="end" (click)="addGrocery(grocery.id,
+          grocery.teamId)">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
 </ion-content>
