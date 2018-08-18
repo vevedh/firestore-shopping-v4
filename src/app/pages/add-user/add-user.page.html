@@ -2,7 +2,7 @@
   <ion-toolbar color="positive">
 
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/tabs/(inventory:inventory)"></ion-back-button>
+      <ion-back-button defaultHref="tabs/(inventory:inventory)"></ion-back-button>
     </ion-buttons>
 
     <ion-title>Add User</ion-title>
@@ -25,4 +25,5 @@
     <ion-button (click)="createUser(createUserForm)" expand="block" [disabled]="!createUserForm.valid">
       Add new User
     </ion-button>
+  </form>
 </ion-content>
