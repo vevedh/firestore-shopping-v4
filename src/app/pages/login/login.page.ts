@@ -35,7 +35,7 @@ export class LoginPage implements OnInit {
       const password: string = loginForm.value.password;
       await this.authService.loginUser(email, password);
       await loading.dismiss();
-      this.router.navigateByUrl('/tabs');
+      this.router.navigateByUrl('/tabs/(inventory:inventory)');
     } catch (error) {
       await loading.dismiss();
       const alert = await this.alertCtrl.create({

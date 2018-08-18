@@ -35,7 +35,7 @@ export class SignupPage implements OnInit {
       const password: string = signupForm.value.password;
       await this.authService.createAdminUser(email, password);
       await loading.dismiss();
-      this.router.navigateByUrl('/tabs');
+      this.router.navigateByUrl('/tabs/(inventory:inventory)');
     } catch (error) {
       await loading.dismiss();
       const alert = await this.alertCtrl.create({

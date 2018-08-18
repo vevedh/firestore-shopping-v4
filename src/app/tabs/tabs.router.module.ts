@@ -15,15 +15,16 @@ const routes: Routes = [
         path: 'shopping-list',
         outlet: 'shopping-list',
         component: ShoppingListPage,
+        canActivate: [AuthGuard],
       },
       {
         path: 'inventory',
         outlet: 'inventory',
         component: InventoryPage,
+        canActivate: [AuthGuard],
       },
     ],
     canActivate: [AuthGuard],
-    canActivateChild: [AuthGuard],
   },
   {
     path: '',
