@@ -25,6 +25,11 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
+    path: 'inventory-add/:inShoppingList',
+    loadChildren: './pages/inventory-add/inventory-add.module#InventoryAddPageModule',
+    canActivate: [AuthGuard],
+  },
+  {
     path: 'add-user',
     loadChildren: './pages/add-user/add-user.module#AddUserPageModule',
     canActivate: [AuthGuard],

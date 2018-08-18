@@ -65,4 +65,27 @@ export class InventoryService {
       });
     });
   }
+
+  createGrocery(
+    name: string,
+    quantity: number,
+    units: string,
+    teamId: string,
+    inShoppingList: boolean = false
+  ): Promise<void> {
+    const groceryId: string = this.fireStore.createId();
+
+    return this.fireStore
+      .doc<Grocery>(`/teamProfile/${teamId}/groceryList/${groceryId}`)
+      .set({
+        id: groceryId,
+        name,
+        quantity,
+        units,
+        teamId,
+        inShoppingList,
+        picked: false,
+        quantityShopping: 0,
+      });
+  }
 }
