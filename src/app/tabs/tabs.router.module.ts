@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
 import { ShoppingListPage } from '../pages/shopping-list/shopping-list.page';
 import { InventoryPage } from '../pages/inventory/inventory.page';
+import { AuthGuard } from '../services/auth.guard';
 
 const routes: Routes = [
   {
@@ -21,6 +22,8 @@ const routes: Routes = [
         component: InventoryPage,
       },
     ],
+    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard],
   },
   {
     path: '',
